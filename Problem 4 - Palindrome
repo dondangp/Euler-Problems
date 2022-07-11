@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void main()
+{
+	int x, y;
+	int product, reverseProduct, max, reverse;
+	max = 0;
+
+	for(x=100;x<999;x++) //start a for loop
+{
+		for(y =100;y<999;y++) //start a for loop for y
+	{
+		product = x * y; //would have to multiply the two products together
+		reverseProduct = product; //reverse product should equal the product
+		reverse = 0; //setting reverse equal to 0
+		while(reverseProduct>0)
+		{
+			reverse = reverse * 10 + reverseProduct % 10;
+			reverseProduct /= 10;
+
+			}
+			if( reverse == product) /* product is a palindrome */
+			{
+			 if(product>max)
+				{
+				max = product;
+				}
+			}
+		}
+	}
+	printf("%d\n", max);
+}
+
